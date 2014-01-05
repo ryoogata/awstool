@@ -1,3 +1,8 @@
+default["aws"]["_DEFAULT_REGION"] = "us-west-1"
+default["aws"]["_ACCESS_KEY"] = ""
+default["aws"]["_SECRET_KEY"] = ""
+default["aws"]["dynamodb"]["_DYNAMODB_REGION"] = "us-west-1"
+default["aws"]["dynamodb"]["_TABLE_NAME"] = "AWSCPUGacha"
 default["s3"]["_ACCESS_KEY"] = ""
 default["s3"]["_SECRET_KEY"] = ""
 default["s3"]["_S3_BUCKETS_NAME"] = ""
