@@ -44,8 +44,8 @@ template "/root/.s3cfg" do
 	group "root"
 	mode 0600
         variables(
-                :accesskey => node["s3"]["_ACCESS_KEY"],
-                :secretkey => node["s3"]["_SECRET_KEY"]
+                :accesskey => node["aws"]["_ACCESS_KEY"],
+                :secretkey => node["aws"]["_SECRET_KEY"]
         )
 end
 
