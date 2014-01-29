@@ -35,41 +35,27 @@ attribute "awstool",
   :display_name => "General awstool Options",
   :type => "hash"
 
-#attribute "aws/_DEFAULT_REGION",
-#  :display_name => "AWS CLI Default Region",
-#  :description =>
-#    "AWS CLI Default Region",
-#  :required => "required",
-#  :recipes => [""]
-#
-#attribute "aws/_ACCESS_KEY",
-#  :display_name => "",
-#  :description =>
-#    "",
-#  :required => "",
-#  :recipes => [""]
-#
-#attribute "aws/_SECRET_KEY",
-#  :display_name => "",
-#  :description =>
-#    "",
-#  :required => "",
-#  :recipes => [""]
-#
-#attribute "s3/_ACCESS_KEY",
-#  :display_name => "",
-#  :description =>
-#    "",
-#  :required => "",
-#  :recipes => [""]
-#
-#attribute "s3/_SECRET_KEY",
-#  :display_name => "",
-#  :description =>
-#    "",
-#  :required => "",
-#  :recipes => [""]
-#
+attribute "aws/_DEFAULT_REGION",
+  :display_name => "AWS CLI Default Region",
+  :description =>
+    "AWS CLI Default Region",
+  :required => "required",
+  :recipes => ["awstool::setup_awscli"]
+
+attribute "aws/_ACCESS_KEY",
+  :display_name => "AWS Access Key",
+  :description =>
+    "AWS Access Key",
+  :required => "required",
+  :recipes => ["awstool::setup_s3cmd","awstool::setup_s3fs","awstool::setup_awscli"]
+
+attribute "aws/_SECRET_KEY",
+  :display_name => "AWS Secret Access Key",
+  :description =>
+    "AWS Secret Access Key",
+  :required => "required",
+  :recipes => ["awstool::setup_s3cmd","awstool::setup_s3fs","awstool::setup_awscli"]
+
 #attribute "s3/_S3_BUCKETS_NAME",
 #  :display_name => "",
 #  :description =>
