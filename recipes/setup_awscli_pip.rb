@@ -11,7 +11,4 @@ easy_install_package "pip" do
   action :install
 end
 
-# pip 経由の aws cli のインストール
-execute "pip install" do
-        command "/usr/bin/pip install awscli"
-end
+python_pip "awscli" 
