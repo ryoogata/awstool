@@ -15,4 +15,5 @@ script "install-aws-cli" do
   code <<-EOH
     python setup.py install
   EOH
+  not_if {File.exists?("/usr/bin/aws")}
 end
