@@ -1,7 +1,7 @@
 git "/usr/local/src/aws-cli" do
-        repository "git://github.com/aws/aws-cli.git"
-        reference "master"
-        action :sync
+  repository "git://github.com/aws/aws-cli.git"
+  reference "master"
+  action :sync
 end
 
 package "python-setuptools" do
