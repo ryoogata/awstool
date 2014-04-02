@@ -13,3 +13,5 @@ default["backup"]["_BACKUPED_DB_PREFIX"] = "dbbackup"
 
 default["boto"]["install_method"] = "source"
 
+default["cgroup"]["cpu"]["_CFS_QUOTA_US"] = "250000"
+default["cgroup"]["cpu"]["_CFS_PERIOD_US"] = "1000000"
