@@ -41,7 +41,6 @@ attribute "aws/_DEFAULT_REGION",
   :description =>
     "AWS CLI Default Region",
   :choice => ["eu-west-1","sa-east-1","us-east-1","ap-northeast-1","us-west-2","us-west-1","ap-southeast-1","ap-southeast-2"],
-  :default => "us-west-1",
   :required => "required",
   :recipes => ["awstool::setup_awscli"]
 
