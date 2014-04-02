@@ -11,3 +11,5 @@ default["backup"]["_BACKUP_DIRECTORY"] = "/var, /tmp"
 default["backup"]["_BACKUPED_FILE_PREFIX"] = "filebackup"
 default["backup"]["_BACKUPED_DB_PREFIX"] = "dbbackup"
 
+default["boto"]["install_method"] = "source"
+
