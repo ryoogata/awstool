@@ -1,0 +1,19 @@
+#!/bin/sh -ex
+
+cpuinfo="\""`cat /proc/cpuinfo | grep name | awk -F: '{print $2}' | sed -e 's/^[ ]*//g' | sed 's/\s\s*/ /g'`"\""
+time="\""`export TZ=JST-9; date '+%Y-%m-%d %H:%M:%S %Z'`"\""
+region=`curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed -e 's/.$//'`
+instanceid=`curl -s http://169.254.169.254/latest/meta-data/instance-id`
+lifecycle=`aws ec2 describe-instances --output text --region $region --instance-id $instanceid | head -3 | tail -1 | awk '{print $9}'`
+az=`curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone`
+type=`curl -s http://169.254.169.254/latest/meta-data/instance-type`
+publicip=`curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
+
+aws dynamodb --region <%= node["aws"]["dynamodb"]["_DYNAMODB_REGION"]%> put-item --table-name <%= node["aws"]["dynamodb"]["_TABLE_NAME"]%> --item {\
+\"PublicIP\":{\"S\":\"$publicip\"}\,\
+\"Timestamp\":{\"S\":"$time"}\,\
+\"Lifecycle\":{\"S\":\"$lifecycle\"}\,\
+\"availability-zone\":{\"S\":\"$az\"}\,\
+\"instance-type\":{\"S\":\"$type\"}\,\
+\"CPUInfo\":{\"S\":"$cpuinfo"}\
+}
