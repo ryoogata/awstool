@@ -58,6 +58,14 @@ attribute "aws/_SECRET_KEY",
   :required => "required",
   :recipes => ["awstool::setup_s3cmd","awstool::setup_s3fs","awstool::setup_awscli"]
 
+attribute "aws/cli/install_method",
+  :display_name => "AWS CLI Install Method",
+  :description =>
+    "AWS CLI Install Method",
+  :choice => ["source","pip"],
+  :required => "required",
+  :recipes => ["awstool::setup_awscli"]
+
 #attribute "s3/_S3_BUCKETS_NAME",
 #  :display_name => "",
 #  :description =>
