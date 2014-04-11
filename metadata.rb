@@ -30,6 +30,24 @@ recipe "awstool::setup_s3fs",
 recipe "awstool::setup_swap",
   "Setup Swap"
 
+recipe "awstool::setup_awscli_pip",
+  ""
+
+recipe "awstool::setup_awscli_source",
+  ""
+
+recipe "awstool::setup_boto",
+  ""
+
+recipe "awstool::setup_boto_pip",
+  ""
+
+recipe "awstool::setup_boto_source",
+  ""
+
+recipe "awstool::setup_cgroup",
+  ""
+
 # == Attributes
 #
 attribute "awstool",
