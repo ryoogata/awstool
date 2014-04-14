@@ -1,3 +1,5 @@
+include_recipe "utility::git"
+
 git "/usr/local/src/boto" do
   repository "git://github.com/boto/boto.git"
   reference "master"

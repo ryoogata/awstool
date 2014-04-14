@@ -1,3 +1,5 @@
+include_recipe "utility::git"
+
 git "/usr/local/src/aws-cli" do
   repository "git://github.com/aws/aws-cli.git"
   reference "master"
