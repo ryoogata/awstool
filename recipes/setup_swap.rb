@@ -4,7 +4,7 @@ bash 'create swapfile' do
                 chmod 600 /swap.img
                 mkswap /swap.img
         EOC
-        only_if { not node[:ec2].nil? and node[:ec2][:instance_type]== 't1.micro'}
+        only_if { not node[:ec2].nil? and node[:ec2][:instance_type] == 't1.micro'}
         creates "/swap.img"
 end
 
@@ -13,7 +13,7 @@ mount '/dev/null' do
         action :enable
         device '/swap.img'
         fstype 'swap'
-        only_if { not node[:ec2].nil? and node[:ec2][:instance_type]== 't1.micro'}
+        only_if { not node[:ec2].nil? and node[:ec2][:instance_type] == 't1.micro'}
 end
 
 
