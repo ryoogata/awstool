@@ -1,0 +1,20 @@
+mount {
+    cpuset     = /cgroup/cpuset;
+    cpu        = /cgroup/cpu;
+    cpuacct    = /cgroup/cpuacct;
+    memory     = /cgroup/memory;
+    devices    = /cgroup/devices;
+    freezer    = /cgroup/freezer;
+    blkio      = /cgroup/blkio;
+    hugetlb    = /cgroup/hugetlb;
+    perf_event = /cgroup/perf_event;
+}
+
+group limittest {
+  cpu {
+    cpu.cfs_quota_us  = <%= node["cgroup"]["cpu"]["_CFS_QUOTA_US"]%>;
+    cpu.cfs_period_us = <%= node["cgroup"]["cpu"]["_CFS_PERIOD_US"]%>;
+  }
+  cpuacct {
+  }
+}
