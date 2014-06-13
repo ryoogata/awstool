@@ -5,9 +5,17 @@ when "centos","amazon"
   end
 end
 
-template "/etc/cgconfig.conf" do
-  source "cgconfig.conf.erb"
-  notifies :restart, "service[cgconfig]", :immediately
+case node['platform']
+when "centos"
+  template "/etc/cgconfig.conf" do
+    source "cgconfig.conf.erb"
+    notifies :restart, "service[cgconfig]", :immediately
+  end
+when "amazon"
+  template "/etc/cgconfig.conf" do
+    source "cgconfig.conf.amazon.erb"
+    notifies :restart, "service[cgconfig]", :immediately
+  end
 end
 
 service "cgconfig" do
