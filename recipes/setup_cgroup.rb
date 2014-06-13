@@ -1,5 +1,5 @@
 case node['platform']
-when "centos", "amazon"
+when "centos","amazon"
   package "libcgroup" do
     action :install
   end
