@@ -1,3 +1,7 @@
+ohai "reload" do
+  action :reload
+end
+
 case node['platform']
 when "centos","amazon"
   package "libcgroup" do
