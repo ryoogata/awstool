@@ -5,6 +5,8 @@ default["aws"]["dynamodb"]["_DYNAMODB_REGION"] = "us-west-1"
 default["aws"]["dynamodb"]["_TABLE_NAME"] = "AWSCPUGacha"
 default["aws"]["cli"]["install_method"] = "source"
 default["aws"]["tag_name"] = ""
+default["aws"]["route53"]["zonename"] = ""
+default["aws"]["route53"]["hostname"] = ""
 
 default["s3"]["_S3_BUCKETS_NAME"] = ""
 
