@@ -8,6 +8,9 @@ default["aws"]["tag_name"] = ""
 default["aws"]["ebs"]["size"] = "8"
 default["aws"]["route53"]["zonename"] = ""
 default["aws"]["route53"]["hostname"] = ""
+default['aws']['route53']['zone_id']= ""
+default["aws"]["creds"]["databag"] = ""
+default["aws"]["creds"]["item"] = ""
 
 default["s3"]["_S3_BUCKETS_NAME"] = ""
 
