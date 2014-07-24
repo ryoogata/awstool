@@ -1,4 +1,4 @@
-include_recipe "utility::git"
+include_recipe "git::source"
 
 git "/usr/local/src/boto" do
   repository "git://github.com/boto/boto.git"

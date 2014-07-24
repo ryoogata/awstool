@@ -1,4 +1,4 @@
-include_recipe "utility::git"
+include_recipe "git::source"
 
 git "/usr/local/src/aws-cli" do
   repository "git://github.com/aws/aws-cli.git"
